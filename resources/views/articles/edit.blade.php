@@ -1,8 +1,12 @@
 @extends('layout')
 
+@section('title')
+    <title>ویرایش مقاله</title>
+@endsection
+
 @section('content')
     <h1 class="page-header">
-        ارسال مقاله
+        ویرایش مقاله
     </h1>
 
     @if(count($errors))
@@ -15,7 +19,7 @@
         </div>
     @endif
 
-    <form action="{{ route('article.update', ['article' => $article->slug]) }}" method="post">
+    <form action="{{ route('article.update', ['article' => $article->slug]) }}" method="post" enctype="multipart/form-data">
         {!! csrf_field() !!}
         {{ method_field('PATCH') }}
         <div class="form-group">
@@ -31,10 +35,23 @@
             </select>
         </div>
         <div class="form-group">
+            <label for=""upload>تصویر فعلی :</label>
+            @if('images/'.$article->file)
+                <img src="{{ asset('images/'.$article->file) }}" alt="">
+            @else
+                <p>تصویری یافت نشد.</p>
+            @endif
+            <br>
+        </div>
+        <div class="form-group">
+            <label for="upload">انتخاب تصویر</label>
+            <input type="file" name="file" value="{{ $article->file }}">
+        </div>
+        <div class="form-group">
             <label for="body">متن مقاله :</label>
             <textarea class="form-control" name="body" id="body" placeholder="متن را وارد کنید" rows="7">{{ $article->body }}</textarea>
         </div>
-        <button type="submit" class="btn btn-default">ارسال مقاله</button>
+        <button type="submit" class="btn btn-default">ویرایش مقاله</button>
     </form>
 @endsection
 

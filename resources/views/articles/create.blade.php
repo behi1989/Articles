@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('title')
+    <title>درج مقاله</title>
+@endsection
+
 @section('content')
     <h1 class="page-header">
         ارسال مقاله
@@ -15,7 +19,7 @@
         </div>
     @endif
 
-    <form action="{{route('article.store')}}" method="post">
+    <form action="{{route('article.store')}}" method="post" enctype="multipart/form-data">
         {!! csrf_field() !!}
         <div class="form-group">
             <label for="title">عنوان مقاله : </label>
@@ -28,6 +32,10 @@
                     <option value="{{ $id }}">{{ $name }}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="form-group">
+            <label for="upload">انتخاب تصویر</label>
+            <input type="file" name="file" value="{{ old('file') }}">
         </div>
         <div class="form-group">
             <label for="body">متن مقاله :</label>

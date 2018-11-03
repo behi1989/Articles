@@ -14,6 +14,7 @@ class Article extends Model
         'title',
         'slug',
         'body',
+        'file',
         'viewCount',
         'commentCount'
     ];
@@ -51,4 +52,5 @@ class Article extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
 }

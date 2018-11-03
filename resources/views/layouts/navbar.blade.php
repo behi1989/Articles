@@ -9,19 +9,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">راکت</a>
+            <a class="navbar-brand" href="/">رش بیت</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">درباره ما</a>
+                    <a href="{{ route('aboutus') }}">درباره ما</a>
                 </li>
                 <li>
-                    <a href="#">سرویس ها</a>
-                </li>
-                <li>
-                    <a href="#">تماس با ما</a>
+                    <a href="{{ route('contactus') }}">تماس با ما</a>
                 </li>
             </ul>
 
@@ -31,7 +28,7 @@
                     {!! csrf_field() !!}
                     <label style="color: #007bff">{{ auth()->user()->name }} خوش اومدی </label>
                     <label> | </label>
-                    <small><a href="{{ route('article.create') }}" style="color: #ac2925;">درج مقاله</a></small>
+                    <small><a href="{{ route('panel.index') }}" style="color: #ac2925;">پنل کاربری</a></small>
                     <button class="btn btn-warning btn-xs">خروج</button>
                 </form>
             </div>

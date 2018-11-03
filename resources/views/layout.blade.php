@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>صحفه اصلی</title>
+    @yield('csrf')
+    @yield('title')
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ mix('css/all.css') }}">
@@ -42,10 +42,12 @@
 
     <hr>
 
+
+</div>
+
     <!-- Footer -->
     @include('layouts.footer')
 
-</div>
 <!-- /.container -->
 
 <!-- jQuery -->

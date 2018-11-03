@@ -33,4 +33,9 @@ class category extends Model
             ]
         ];
     }
+
+//    public function article_category()
+//    {
+//        return $this->belongsTo(Category::class);
+//    }
 }
