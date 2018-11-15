@@ -1,7 +1,7 @@
 # Articles
 # Laravel Project
 
-1. Install Composer 
+1. Install Composer from 
   http://getcomposer.org
 
 2. Now using the command line 
